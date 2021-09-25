@@ -36,4 +36,8 @@ app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use(cookieParser());
 
+import userRouter from "./routes/users"
+
+app.use('/users', userRouter);
+
 export default app;
