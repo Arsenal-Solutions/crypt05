@@ -1,6 +1,7 @@
 import databaseConfig from './database.json';
 import {Dialect} from "sequelize";
-
+import sessionConfig from './session.json';
+import redisConfig from './redis.json';
 
 type DatabaseConfig = {
     "username": string,
@@ -10,3 +11,16 @@ type DatabaseConfig = {
     "dialect": Dialect
 }
 export const database: DatabaseConfig = databaseConfig as unknown as DatabaseConfig;
+
+type SessionConfig = {
+    sessionSecrets: string[]
+}
+export const session: SessionConfig = sessionConfig;
+
+type RedisConfig = {
+    host: string,
+    port: number,
+    password?: string,
+    db?: string | number
+}
+export const redis: RedisConfig = redisConfig;
