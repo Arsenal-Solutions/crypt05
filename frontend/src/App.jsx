@@ -12,6 +12,9 @@ export default class App extends React.Component {
       <Route exact path="/login" component={Login} />
       <Route exact path="/signup" component={Signup}/>
       <Route exact path="/Home" component={Home}/>
+      <Route path = "/">
+        <Redirect to={"/login"}/>
+      </Route>
     </BrowserRouter>
 
   }
