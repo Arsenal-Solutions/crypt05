@@ -1,9 +1,11 @@
 import React, {useState} from 'react';
-import GoogleLogin from "react-google-login";
 import { Button, FormGroup, FormControl, Alert} from "react-bootstrap";
 import styles from './Login.module.css';
 import {Link, Redirect, Route} from "react-router-dom";
 import axios from 'axios';
+import ReactDOM from 'react-dom';
+import GoogleLogin from 'react-google-login';
+<script src="https://apis.google.com/js/platform.js" async defer></script>
 
 function Login(){
     const [email,setEmail] = useState("");
@@ -70,8 +72,7 @@ function Login(){
                                 Login
                             </Button>
 
-
-                        <div className={styles.signUp}>
+                            <div className={styles.signUp}>
                             <Link to ="/signUp">
                                 <Button block bsSize="large" type="submit">
                                     Sign Up
@@ -79,6 +80,15 @@ function Login(){
                             </Link>
                         </div>
 
+                        <div className = {styles.GoogleLogin}>
+                            <GoogleLogin
+                                clientId="97176934286-jivcjar88gvir43f5cetgmetpr3hncqj.apps.googleusercontent.com"
+                                buttonText="Sign in with Google"
+                                onSuccess={responseGoogle}
+                                onFailure={responseGoogle}
+                                cookiePolicy={'single_host_origin'}
+                            />
+                        </div>
                     </form>
                 </div>
             </div>

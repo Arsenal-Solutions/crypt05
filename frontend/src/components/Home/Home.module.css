@@ -1,0 +1,30 @@
+.Home{
+    padding-top: 5%;
+    padding-left: 5%;
+    justify-content: left;
+}
+
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.Header{
+    display: flex;
+    height: 200px;
+    width: 750px;
+    align-items: center;
+}
+
+.button{
+    justify-content: space-between;
+    align-content: space-between;
+}
+
+.button1{
+    font-size: large;
+    align-content: space-between;
+
+}

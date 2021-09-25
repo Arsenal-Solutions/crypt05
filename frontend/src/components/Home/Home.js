@@ -1,30 +1,43 @@
 import React, {Component} from 'react';
-import PopUp from "../PopUp/PopUp";
 import styles from './Home.module.css';
+import NumPad from 'react-numpad';
 
 class Home extends Component{
 
-    constructor(props) {
-        super(props);
-        this.state = {showPop:false}
-    }
 
-    togglePopup(){
-        this.setState({
-            showPopup: !this.state.showPopup
-        });
-    }
 
     render() {
         return (
-            <div className={styles.Home}>
-                <button onClick={this.togglePopup.bind(this)}>Form</button>
-
-                {this.state.showPop ? <PopUp
-                    text="click here to close"
-                    closePopup={this.togglePopup.bind(this)}/>:null}
-
+            <div>
+                
+                
+                <div className={styles.center}>
+                <img src='Cryp3t05.png' className={styles.Header}/>
+                </div>
+                    
+                    <div className={styles.Home}>
+                        <NumPad.Number 
+                        onChange={(value) => { console.log('value', value)}}
+                        label={'MiamiCoin'}
+                        placeholder={'my placeholder'}
+                        /*theme={this.hemp}*/
+                        value={0}
+                        decimal={2}
+                        inline={true}
+                        postion={'flex-start'}
+                    />
+                <div className={styles.button}>
+                    <button className={styles.button1}>Send</button>
+                    &nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;
+                    <button className={styles.button1}>request</button>
+                </div>
+                    
+                    
             </div>
+        </div>
+            
         );
     }
 
