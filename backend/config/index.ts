@@ -2,6 +2,7 @@ import databaseConfig from './database.json';
 import {Dialect} from "sequelize";
 import sessionConfig from './session.json';
 import redisConfig from './redis.json';
+import passwordConfig from './passwords.json';
 
 type DatabaseConfig = {
     "username": string,
@@ -24,3 +25,8 @@ type RedisConfig = {
     db?: string | number
 }
 export const redis: RedisConfig = redisConfig;
+
+type PasswordConfig = {
+    saltRounds: number
+}
+export const passwords: PasswordConfig = passwordConfig as PasswordConfig;
