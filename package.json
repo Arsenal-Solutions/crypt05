@@ -1,0 +1,22 @@
+{
+  "name": "crypt05",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Arsenal-Solutions/crypt05.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Arsenal-Solutions/crypt05/issues"
+  },
+  "homepage": "https://github.com/Arsenal-Solutions/crypt05#readme",
+  "dependencies": {
+    "@blockstack/clarity": "^0.3.15"
+  }
+}
