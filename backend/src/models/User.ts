@@ -17,7 +17,7 @@ type UserDataType = {
 
 @DefaultScope(() => ({
     attributes: {
-        exclude: ['password', 'privateKey']
+        exclude: ['password']
     }
 }))
 @Scopes(() => ({

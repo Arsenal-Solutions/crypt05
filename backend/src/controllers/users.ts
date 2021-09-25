@@ -3,7 +3,7 @@ import User from '../models/User';
 import Joi, {ValidationError} from 'joi';
 import bcrypt from 'bcrypt';
 import {passwords as passwordsConfig} from '../../config/index';
-import {makeRandomPrivKey} from '@stacks/transactions';
+import {getAddressFromPrivateKey, makeRandomPrivKey, TransactionVersion, privateKeyToString} from '@stacks/transactions';
 declare module 'express-session' {
     interface SessionData {
         user: number
@@ -40,7 +40,7 @@ export const createUser = async function (req: Request, res: Response) {
         const user = await User.create({
             username,
             password: await bcrypt.hash(password, passwordsConfig.saltRounds),
-            privateKey: privateKey.data.toString('base64'),
+            privateKey: privateKeyToString(privateKey),
         });
 
         return res.status(201).send(user);
@@ -59,7 +59,12 @@ export const login = async function (req: Request, res: Response) {
                 id: req.session.user
             }
         });
-        return res.status(200).send(user);
+        const privateKey = user.privateKey;
+        return res.status(200).send({
+            ...user.toJSON(),
+            address: getAddressFromPrivateKey(privateKey,
+                TransactionVersion.Testnet)
+        });
     }
 
     const schema = Joi.object({
@@ -91,12 +96,18 @@ export const login = async function (req: Request, res: Response) {
             return res.status(401).send({message: 'Invalid username or password.'})
         }
 
+        const privateKey = user.privateKey;
         req.session.user = user.id;
-        return res.status(200).send(user);
+        return res.status(200).send({
+            ...user.toJSON(),
+            address: getAddressFromPrivateKey(privateKey,
+                TransactionVersion.Testnet)
+        });
     } catch (err) {
         if (err.isJoi) {
             return res.status(400).send({message: (err as ValidationError).message});
         }
+        console.error(err);
         return res.status(500).send({message: 'An error has occurred on the server.'})
     }
 }
