@@ -3,7 +3,8 @@ import {Table, Column, Model, PrimaryKey, CreatedAt, UpdatedAt, DefaultScope, Sc
 type UserCreationType = {
     username: string,
     password: string,
-    privateKey: string
+    privateKey: string,
+    address: string
 }
 
 type UserDataType = {
@@ -11,6 +12,7 @@ type UserDataType = {
     username: string,
     password: string,
     privateKey: string,
+    address: string,
     createdAt: Date,
     updatedAt: Date
 }
@@ -42,6 +44,9 @@ export default class User extends Model<UserDataType, UserCreationType> {
 
     @Column
     privateKey: string;
+
+    @Column
+    address: string;
 
     @CreatedAt
     @Column
