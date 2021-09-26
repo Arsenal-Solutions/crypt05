@@ -1,14 +1,17 @@
 // @ts-ignore
-import styles from './Home.module.css';
+import styles from './TransferPage.module.css';
 import {useState} from "react";
+import {Redirect} from "react-router-dom";
 
 type Key = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 0 | '.' | '<';
 
-function Home(){
+function TransferPage(){
 
     const [currentValue, setCurrentValue] = useState(0.00);
     const [hasDecimal, setHasDecimal] = useState(false);
     const [decimalIndex, setDecimalIndex] = useState(0);
+
+    const [send, setSend] = useState(false);
 
     function handleKey(key: Key) {
         if(typeof(key) === 'number') {
@@ -60,6 +63,10 @@ function Home(){
         }
     }
 
+    if(send) {
+        return <Redirect to={`/scanAndSend/${currentValue}`}/>
+    }
+
     return <div className={styles.container}>
         <div className={styles.currentValue}>
             <img className={styles.miamicoin} src="/Miamicoin.png"/>
@@ -94,7 +101,9 @@ function Home(){
         </div>
 
         <div className={styles.bottomBar}>
-            <div>
+            <div onClick={() => {
+                setSend(true);
+            }}>
                 Send
             </div>
             <div>
@@ -110,10 +119,10 @@ function Home(){
                 Transfer
             </div>
             <div>
-                MiamiCoin Value
+                Your Code
             </div>
         </div>
     </div>
 }
 
-export default Home;
+export default TransferPage;

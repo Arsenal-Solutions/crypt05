@@ -25,6 +25,7 @@ function Login(){
                 password: password
             });
             const user = result.data;
+            window.localStorage.setItem('user', JSON.stringify(user));
             setValid(true);
         }
         catch(err) {
