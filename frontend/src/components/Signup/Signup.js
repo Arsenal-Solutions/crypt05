@@ -19,8 +19,8 @@ function Signup(){
     async function handleSubmit(event){
         event.preventDefault();
         try {
-            const result = await axios.post('/api/clients', {
-                email: email,
+            const result = await axios.post('/api/users', {
+                username: email,
                 password: password
             });
             const user = result.data;

@@ -21,8 +21,8 @@ function Login(){
     async function handleSubmit(event){
         event.preventDefault();
         try {
-            const result = await axios.post('/api/clients/login', {
-                email: email,
+            const result = await axios.post('/api/users/login', {
+                username: email,
                 password: password
             });
             const user = result.data;
