@@ -5,7 +5,6 @@ import {Link, Redirect, Route} from "react-router-dom";
 import axios from 'axios';
 import ReactDOM from 'react-dom';
 import GoogleLogin from 'react-google-login';
-<script src="https://apis.google.com/js/platform.js" async defer></script>
 
 function Login(){
     const [email,setEmail] = useState("");
@@ -38,12 +37,12 @@ function Login(){
     }
 
     if(valid){
-        return <Redirect to="/Home"/>
+        return <Redirect to="/home"/>
     }
         return (
             <div>
                 <div className={styles.Logo}>
-                    <img src="/CrisisCheck_Logo.svg"/>
+                    <img style={{width: '100%'}} src="/Cryp3t05.png"/>
                 </div>
                 {
                     error ? <Alert variant="danger" className={styles.Login}>{error}</Alert> : <></>

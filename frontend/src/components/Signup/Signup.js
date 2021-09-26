@@ -32,12 +32,12 @@ function Signup(){
     }
 
     if(valid){
-        return <Redirect to="/Home"/>
+        return <Redirect to="/home"/>
     }
     return (
         <div className={styles.Register}>
             <div className={styles.Logo}>
-                <img src="/CrisisCheck_Logo.svg"/>
+                <img style={{width: '100%'}} src="/Cryp3t05.png"/>
             </div>
             {
                 error ? <Alert variant="danger" className={styles.Login}>{error}</Alert> : <></>
