@@ -25,7 +25,7 @@ type UserDataType = {
 @Scopes(() => ({
     withPassword: {
         attributes: [
-            'id', 'username', 'password', 'createdAt', 'updatedAt'
+            'id', 'username', 'password', 'createdAt', 'updatedAt', 'address'
         ]
     }
 }))

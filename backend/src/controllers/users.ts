@@ -9,7 +9,7 @@ import {
     makeRandomPrivKey,
     makeSTXTokenTransfer,
     privateKeyToString,
-    TransactionVersion,
+    TransactionVersion
 } from '@stacks/transactions';
 import {StacksTestnet} from '@stacks/network';
 import BigNum from 'bn.js';
@@ -155,7 +155,7 @@ export const transfer  = async function (req: Request, res: Response) {
         network: network,
         memo: 'test memo',
         anchorMode: AnchorMode.Any,
-        nonce: new BigNum(3)
+        nonce: new BigNum(parseInt(req.body.nonce) + 1)
     });
 
     console.log(`Transaction: ${toJson(transaction)}`);
