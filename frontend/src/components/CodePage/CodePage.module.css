@@ -15,12 +15,16 @@
 }
 
 .navBar  {
-    height: 8vh;
+    height: 12vh;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    padding-bottom: 2vh;
-    padding-top: 2vh;
+    align-items: center;
     color: #000;
     background-color: #fff;
+}
+
+.navBarIcon {
+    color: black;
+    font-size: 50pt;
 }

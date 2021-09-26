@@ -79,16 +79,6 @@ function Login(){
                                 </Button>
                             </Link>
                         </div>
-
-                        <div className = {styles.GoogleLogin}>
-                            <GoogleLogin
-                                clientId="97176934286-jivcjar88gvir43f5cetgmetpr3hncqj.apps.googleusercontent.com"
-                                buttonText="Sign in with Google"
-                                onSuccess={responseGoogle}
-                                onFailure={responseGoogle}
-                                cookiePolicy={'single_host_origin'}
-                            />
-                        </div>
                     </form>
                 </div>
             </div>

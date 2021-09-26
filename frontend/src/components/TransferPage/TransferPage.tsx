@@ -1,7 +1,7 @@
 // @ts-ignore
 import styles from './TransferPage.module.css';
 import {useState} from "react";
-import {Redirect} from "react-router-dom";
+import {Redirect, Link} from "react-router-dom";
 
 type Key = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 0 | '.' | '<';
 
@@ -112,15 +112,18 @@ function TransferPage(){
         </div>
 
         <div className={styles.navBar}>
-            <div>
-                Balance
-            </div>
-            <div>
-                Transfer
-            </div>
-            <div>
-                Your Code
-            </div>
+            <Link to="/transactions" className={[styles.navBarIcon, 'material-icons'].join(' ')}>
+                receipt_long
+            </Link>
+            <Link to="/transfer" className={[styles.navBarIcon, 'material-icons'].join(' ')}>
+                sync_alt
+            </Link>
+            <Link to="/code" className={[styles.navBarIcon, 'material-icons'].join(' ')}>
+                qr_code_2
+            </Link>
+            <Link to="/home" className={[styles.navBarIcon, 'material-icons'].join(' ')}>
+                home
+            </Link>
         </div>
     </div>
 }

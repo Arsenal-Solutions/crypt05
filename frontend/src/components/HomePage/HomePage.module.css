@@ -1,0 +1,55 @@
+.container {
+    color: #fff;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #548235;
+}
+
+.navBar  {
+    height: 12vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    color: #000;
+    background-color: #fff;
+}
+
+.navBarIcon {
+    color: black;
+    font-size: 50pt;
+}
+
+.currentAmount {
+    border: 5px solid black;
+    height: 10vh;
+    flex: 1;
+    display: flex;
+    flex-direction: row
+}
+
+.miamicoin {
+    width: 33vw;
+    height: 33vw;
+    text-align: center;
+}
+
+.currentAmountText {
+    display: flex;
+    flex-direction: column;
+    margin-left: 5vw;
+    flex-direction: column;
+    padding-top: 5vh;
+}
+
+.currentAmountMiami {
+    font-size: 55pt;
+    margin-bottom: 5vh;
+}
+
+.currentAmountDollars {
+    font-size: 30pt;
+    margin-left: 20vw;
+}

@@ -6,7 +6,8 @@ import TransferPage from './components/TransferPage/TransferPage'
 import CodePage from "./components/CodePage/CodePage";
 import ScanCodePage from "./components/ScanCodePage/ScanCodePage";
 import SendPage from "./components/SendPage/SendPage";
-
+import TransactionsPage from "./components/TransactionsPage/TransactionsPage";
+import HomePage from "./components/HomePage/HomePage"
 
 
 export default class App extends React.Component {
@@ -15,12 +16,14 @@ export default class App extends React.Component {
       <Switch>
         <Route exact path="/login" component={Login} />
         <Route exact path="/signup" component={Signup}/>
-        <Route exact path="/home" component={TransferPage}/>
+        <Route exact path="/transfer" component={TransferPage}/>
         <Route exact path="/code" component={CodePage}/>
+        <Route exact path="/transactions" component={TransactionsPage}/>
+        <Route exact path="/home" component={HomePage}/>
         <Route exact path="/scanAndSend/:amount" component={ScanCodePage}/>
         <Route exact path="/send/:address/:amount" component={SendPage}/>
         <Route path ="/">
-          <Redirect to={"/login"}/>
+          <Redirect to={"/transfer"}/>
         </Route>
       </Switch>
     </BrowserRouter>
