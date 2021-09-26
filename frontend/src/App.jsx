@@ -5,6 +5,7 @@ import Signup from './components/Signup/Signup';
 import TransferPage from './components/TransferPage/TransferPage'
 import CodePage from "./components/CodePage/CodePage";
 import ScanCodePage from "./components/ScanCodePage/ScanCodePage";
+import SendPage from "./components/SendPage/SendPage";
 
 
 
@@ -17,6 +18,7 @@ export default class App extends React.Component {
         <Route exact path="/home" component={TransferPage}/>
         <Route exact path="/code" component={CodePage}/>
         <Route exact path="/scanAndSend/:amount" component={ScanCodePage}/>
+        <Route exact path="/send/:address/:amount" component={SendPage}/>
         <Route path ="/">
           <Redirect to={"/login"}/>
         </Route>
